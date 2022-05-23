@@ -27,7 +27,7 @@ $partite = [
     if(empty($_GET['name']) || empty($_GET['mail']) || empty($_GET['age'])){
         $access = 'Accesso Negato, Inserisci i dati';
         var_dump($access);
-    }elseif(strlen($name)>3 && strpos($mail, '@') && strpos($mail, '.' && is_numeric($age))){
+    }elseif(strlen($name)>3 && strpos($mail, "@") && strpos($mail, ".") && is_numeric($age)){
         $access = 'Accesso riuscito';
     }else{
         $access = 'Accesso Negato';
