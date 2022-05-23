@@ -106,6 +106,25 @@ $partite = [
             ]
         ]
     ];
+    /* snack7 */
+    $avg = 0;
+    $classe = [
+        [
+            'nome' => 'Pippo',
+            'cognome' => 'Baudo',
+            'voti' => [3, 5, 2, 7, 3]
+        ],
+        [
+            'nome' => 'Pippo',
+            'cognome' => 'Franco',
+            'voti' => [3, 5, 3, 4, 3]
+        ],
+        [
+            'nome' => 'Franchino',
+            'cognome' => 'Pippotto',
+            'voti' => [3, 2, 2, 7, 6]
+        ],
+    ]
 
 ?>
 
@@ -176,7 +195,11 @@ $partite = [
     </ul>
     <!-- snack7 -->
     <h1>snack7</h1>
-    
+        <?php for($i = 0; $i < count($classe); $i++){ ?>
+            <p>
+                <?php echo $classe[$i]['nome'] . ' ' .  $classe[$i]['cognome'] . ' media voti: ' . $avg = array_sum($classe[$i]['voti']) / count($classe[$i]['voti']); ?>
+            </p>
+        <?php } ?>
 </body>
 </html>
 
