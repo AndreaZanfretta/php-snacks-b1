@@ -21,12 +21,17 @@ $partite = [
         ]
     ];
     /* snack2 */
-    $name = $_GET['name'];
-    $mail = $_GET['mail'];
-    $age = $_GET['age'];
+    if(isset($_GET['name']) && isset($_GET['mail']) && isset($_GET['age'])){
+        $name = $_GET['name'];
+        $mail = $_GET['mail'];
+        $age = $_GET['age'];
+    } else {
+        $name = '';
+        $mail = '';
+        $age = '';
+    }
     if(empty($_GET['name']) || empty($_GET['mail']) || empty($_GET['age'])){
         $access = 'Accesso Negato, Inserisci i dati';
-        var_dump($access);
     }elseif(strlen($name)>3 && strpos($mail, "@") && strpos($mail, ".") && is_numeric($age)){
         $access = 'Accesso riuscito';
     }else{
