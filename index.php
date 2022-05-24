@@ -72,6 +72,7 @@ $partite = [
             ]
         ],
     ];
+    $keys = array_keys($posts);
     /* snack4 */
     $numArr = [];
     while(count($numArr) < 15){
@@ -152,13 +153,16 @@ $partite = [
     <h2><?php echo $access ?></h2>
     <!-- snack3 -->
     <h1>Snack3</h1>
-    <p><?php for($i = 0; $i < count($posts); $i++){ ?>
+    <p><?php for($i = 0; $i < count($keys); $i++){ ?>
         <li>
-        <?php echo $posts[$i] . '-' ?>
-        <ul>
+        <?php echo $keys[$i] . '-' ?>
+        <ul><?php foreach($posts[$keys[$i]] as $post) { ?>
             <li>
-                
+                <?php echo $post['title'];?> <br>
+                <?php echo $post['author'];?> <br>
+                <?php echo $post['text'];?> <br>
             </li>
+        <?php } ?>
         </ul>
         </li>
         <?php } ?>
